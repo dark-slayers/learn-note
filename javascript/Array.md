@@ -15,3 +15,14 @@ concat() 方法用于连接两个或多个数组。
 </code>
 </pre>
 ---
+## 数组创建
+<pre>
+<code>
+	let array=new Array();
+	let array=new Array(3);
+	let array=[1,'A',3];
+	let array=[];
+	let array={};
+	let array=new Array(1,2,3);
+</code>
+</pre>
