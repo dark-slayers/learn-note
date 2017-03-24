@@ -26,3 +26,14 @@ concat() 方法用于连接两个或多个数组。
 	let array=new Array(1,2,3);
 </code>
 </pre>
+---
+## 数组拆分
+<pre>
+<code>
+	let data = [1,2,3,4,5,6,7,8,9];
+	let result = [];
+	for(let i=0,len=data.length;i<len;i+=3){
+ 		result.push(data.slice(i,i+3));
+	}
+</code>
+</pre>
