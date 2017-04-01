@@ -38,3 +38,31 @@ concat() 方法用于连接两个或多个数组。<br>
 </code>
 </pre>
 ---
+## 数组遍历
+<pre>
+<code>
+let arr = [1, 2, 3,];
+for (var i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
+}
+console.log("for end");
+for (var i in arr) {
+  console.log(arr[i]);
+}
+console.log("for in end");
+arr.forEach(function(e) {
+  console.log(e);
+});
+console.log("forEach end");
+arr.map(function(e) {
+  console.log(e);
+});
+console.log("map end");
+//ES6
+for (let value of arr) {
+  console.log(value);
+};
+console.log("for of end");  
+</code>
+</pre>
+---
