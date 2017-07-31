@@ -1,0 +1,12 @@
+springMVC
+使用HTTP使用Pacth方法向服务端发送请求时，服务器端需要加上web.xml配置：
+<filter>
+  <filter-name>put</filter-name>
+  <filter-class>
+    org.springframework.web.filter.HttpPutFormContentFilter
+  </filter-class>
+</filter>
+<filter-mapping>
+  <filter-name>put</filter-name>
+  <url-pattern>*.mvc</url-pattern>
+</filter-mapping>

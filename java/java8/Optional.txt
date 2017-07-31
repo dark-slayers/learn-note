@@ -1,7 +1,11 @@
 Optional 中我们真正可依赖的应该是除了 isPresent() 和 get() 的其他方法:
 
 public<U> Optional<U> map(Function<? super T, ? extends U> mapper)
+如果Optional存在有效值，则返回使用mapper函数进行转换后的结果，否则返回空Optional
+
 public T orElse(T other)
+如果Optional存在有效值，则返回该值，否则返回参数other的值
+
 public T orElseGet(Supplier<? extends T> other)
 public void ifPresent(Consumer<? super T> consumer)
 public Optional<T> filter(Predicate<? super T> predicate)

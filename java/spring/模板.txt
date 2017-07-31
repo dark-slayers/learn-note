@@ -1,0 +1,8 @@
+service类
+@Service("searchBarcodeService")
+@Scope("prototype")
+public class SearchBarcodeService
+{
+	@Autowired
+	private BarcodeDao barcodeDao;
+}
