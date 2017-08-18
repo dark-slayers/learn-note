@@ -1,0 +1,6 @@
+查看全局安装的webpack的版本
+npm list -g webpack
+查看最新的webpack版本号
+npm info webpack version
+npm update -g webpack
+cnpm install -g webpack

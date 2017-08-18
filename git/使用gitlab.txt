@@ -1,0 +1,12 @@
+1、在本地git bash中输入命令 ssh-keygen -t rsa -C "xx@xx.cn"
+创建过程中需要输入passphrase作为提交口令，直接回车表示使用空口令，提交口令非空时，每次提交都需要输入提交口令。
+Android studio 如果有提交口令可能会导致无法同步，建议不要设置提交口令
+2、打开C:\Users\liuxx\.ssh\id_rsa.pub，复制内容
+3、在gitlab网站中的Profile Settings中，将内容粘贴进去，添加对应key
+
+多用户设置
+1、创建GitHub的KEY：ssh-keygen -t rsa -C "1234@qq.com"
+创建时使用文件名"github_rsa"
+2、eval $(ssh-agent -s)
+3、ssh-add ~/.ssh/github_rsa
+4、在github网站中添加KEY

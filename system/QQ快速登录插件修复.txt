@@ -1,0 +1,3 @@
+WIN + X :命令提示符（管理员）
+CD C:\Program Files (x86)\Common Files\Tencent\TXSSO\Bin
+regsvr32 npSSOAxCtrlForPTLogin.dll

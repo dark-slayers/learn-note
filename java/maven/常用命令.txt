@@ -1,0 +1,6 @@
+下载源码
+mvn dependency:sources
+下载DOC
+mvn dependency:resolve -Dclassifier=javadoc
+执行打包（依赖一起打包进入可执行jar）
+mvn assembly:assembly

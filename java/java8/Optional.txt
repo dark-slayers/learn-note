@@ -1,3 +1,4 @@
+Optional 应该只用于返回类型
 Optional 中我们真正可依赖的应该是除了 isPresent() 和 get() 的其他方法:
 
 public<U> Optional<U> map(Function<? super T, ? extends U> mapper)

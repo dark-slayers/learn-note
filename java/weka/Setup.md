@@ -1,0 +1,17 @@
+下载地址：https://sourceforge.net/projects/weka/files/
+<p>
+修改安装目录下的RunWeka.ini文件：<br>
+fileEncoding=Cp1252<br>
+修改为:<br>
+fileEncoding=UTF-8
+<p>
+添加SQL驱动至环境变量：<br>
+CLASSPATH增加：<br>
+D:\Lib\MavenStroage\mysql\mysql-connector-java\5.1.38\mysql-connector-java-5.1.38.jar;<br>
+使用解压软件打开weka-src.jar，在\src\main\java\weka\experiment中获取属性配置文件DatabaseUtils.props.mysql,<br>
+修改内容：<br>
+*jdbcDriver=org.gjt.mm.mysql.Driver*
+修改为：__jdbcDriver=com.mysql.jdbc.Driver__<br>
+*jdbcURL=jdbc:mysql://server_name:3306/database_name*
+修改为：__jdbcURL=jdbc:mysql://localhost:3306/weka__<br>
+文件另存为DatabaseUtils.props，保存至安装目录<p>
