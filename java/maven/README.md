@@ -1,2 +1,2 @@
-#Maven配置文件
-##settings.xml放置位置：C:\Users\${用户名}\.m2
+#Maven閰嶇疆鏂囦欢
+##settings.xml鏀剧疆浣嶇疆锛欳:\Users\${鐢ㄦ埛鍚峿\.m2
