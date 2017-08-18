@@ -1,5 +1,6 @@
-# Oracle常用命令：
-### 重置用户sys密码为sys：
+Oracle常用命令：
+
+重置用户sys密码为sys：
 orapwd file=D:\app\liuxx_oracle\product\12.1.0\dbhome_1\database\PWDorcl.ora password=sys
 
 ---
