@@ -1,0 +1,7 @@
+1. 使用npm进行安装时，package.json文件中，结束的}符号前面不能有,
+正常格式：
+"license": "MIT"
+}
+异常格式
+"license": "MIT",
+}
