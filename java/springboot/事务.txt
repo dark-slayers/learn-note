@@ -1,0 +1,17 @@
+使用@Transactional对方法进行事务注解时：
+1.Transactional：org.springframework.transaction.annotation.Transactional
+2.注解应该放在被外部类调用的方法上
+比如：
+class Service {
+	@Transactional
+	public void a() {
+		b();
+	}
+	public void b() {}
+}
+class Controller {
+	Service service;
+	void a() {
+		service.a();
+	}
+}
