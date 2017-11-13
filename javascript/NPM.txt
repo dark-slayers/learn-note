@@ -2,6 +2,8 @@
 npm list -g webpack
 查看最新的webpack版本号
 npm info webpack version
+查看全部d3版本号
+npm info d3
 npm update -g webpack
 cnpm install -g webpack
 安装GitHub项目
