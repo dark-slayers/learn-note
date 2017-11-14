@@ -88,3 +88,8 @@ git branch -d dev
 ### 除非你将分支推送到远端仓库，不然该分支就是 不为他人所见的：
 git push origin <branch>
 ---
+### .gitignore文件修改后，需要删除已经进入版本管理的文件
+git rm -r --cached .<br>
+git add .<br>
+git commit -m 'update .gitignore'<br>
+---
