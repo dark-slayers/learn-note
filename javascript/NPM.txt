@@ -5,8 +5,15 @@ npm info webpack version
 查看全部d3版本号
 npm info d3
 npm update -g webpack
+升级全局webpack
 cnpm install -g webpack
 安装GitHub项目
 cnpm install dark-slayers/react-ui
 卸载安装的github项目
 cnpm uninstall react-ui
+
+升级NPM
+管理员身份运行PowerShell
+Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
+npm install -g npm-windows-upgrade
+npm-windows-upgrade
