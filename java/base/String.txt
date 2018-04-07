@@ -1,0 +1,36 @@
+String,StringBuilder,StringBuffer
+String是不可变对象，字符串拼接时，如果使用String对象进行拼接，将会创建新的String对象，并且将指针移至新对象，
+如果进行多次拼接操作，每次都会创建新对象并移动指针，多个对象会导致GC，会导致性能较差。
+StringBuiler和StringBuffer是可以变对象，每次进行拼接操作是改变自身，性能较好。
+StringBuffer类是线程安全的，大部分方法都被synchronized关键字修饰，
+没有被synchronized关键字修饰的方法则是调用了其他synchronized方法，同步的开销会使StringBuffer的性能低于StringBuilder。
+StringBuilder不是线程安全的，应该用于单线程环境。用于多线程时需要额外的同步。
+
+String对象的创建
+String a= "a";
+检查常量池，常量池中没有值为a的对象，创建一个String对象在常量池，返回该对象引用。
+创建了一个对象和一个引用。
+String b= "a";
+检查常量池，常量池中有一个值对a的对象，返回该对象引用。
+创建了一个引用。
+String c= new String("a");
+检查常量池，常量池中有一个值对a的对象，返回该对象引用。在堆中创建一个String对象。返回堆中的对象引用。
+创建了一个对象和一个引用。
+String d=new String("A"+"B");
+常量池先创建A，B，AB三个对象，堆中创建一个对象String("AB"),返回堆中对象的引用。
+创建了4个对象和一个引用。
+String str2 = new String("ABC") + "ABC";
+new String("ABC")创建常量池对象ABC，堆对象String("ABC"),+的拼接结果因为不是常量，不进入常量池，返回拼接结果的引用
+创建两个对象和一个引用。
+
+jvm优化
+jvm会对“+”号连接的字符串常量优化为连接后的值
+String str1 = "aaabbb";
+String str2 = "aaa" + "bbb";
+String str3 = "bbb";
+String str4 = "aaa" + str3;
+final String str5 = "bbb";
+String str6 = "aaa" + str5;
+System.out.println(str1 == str2); //true
+System.out.println(str1 == str4); //false
+System.out.println(str1 == str6); //true
