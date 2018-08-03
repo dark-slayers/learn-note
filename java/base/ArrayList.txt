@@ -1,0 +1,14 @@
+JDK1.8
+ArrayList内置两个空白数组DEFAULTCAPACITY_EMPTY_ELEMENTDATA、EMPTY_ELEMENTDATA，
+使用不同的构造方式创建ArrayList会将初始数组定义为不同的空白数组
+ArrayList() 使用DEFAULTCAPACITY_EMPTY_ELEMENTDATA
+ArrayList(0)或者public ArrayList(Collection<? extends E> c)c长度为0使用EMPTY_ELEMENTDATA
+
+初始数组为DEFAULTCAPACITY_EMPTY_ELEMENTDATA时，添加元素进行扩容的最小容量为10
+使用ArrayList()定义列表，添加第一个元素时，内置Object数组长度为10
+初始数组为EMPTY_ELEMENTDATA时，没有定义最小容量
+使用ArrayList(0)定义列表，添加第一个元素时，内置内置Object数组长度为1
+
+如果进行元素的持续添加，最小容量为10的列表在元素数量未满10个时不进行扩容，超过10个时进行1.5倍的扩容(10->15)
+最小容量为1的列表会进行多次扩容（1->2->3->4->6->9->13）
+扩容时会进行开销较大的数组复制（先生成大小为原始数组1.5倍长度的空白数组，再将原数组数据复制进新数组）

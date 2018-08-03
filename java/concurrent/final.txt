@@ -1,0 +1,42 @@
+final关键字：
+final修饰的对象字段必须在对象初始化的时候赋值。
+final修饰的静态字段必须在类初始化的时候赋值。
+final修饰的变量在不使用反射的情况下，不能被重新赋值。
+final字段在直接赋值的情况下会被JVM作为常量优化，使用到字段的地方会被直接替换为常量。
+
+public class A
+{
+    private final String a = "A";
+
+    void update() throws NoSuchFieldException, SecurityException, IllegalArgumentException,
+            IllegalAccessException
+    {
+        Field field = this.getClass().getDeclaredField("a");
+        field.setAccessible(true);
+        field.set(this, "Hello");
+    }
+
+    void show()
+    {
+        System.out.println(a);
+    }
+
+    public static void main(String[] args)
+    {
+        A a = new A();
+        try
+        {
+            a.update();
+            a.show();
+        } catch (NoSuchFieldException
+                | SecurityException
+                | IllegalAccessException
+                | IllegalArgumentException e)
+        {
+            e.printStackTrace();
+        }
+    }
+}
+控制台将会输出 A
+如果将赋值方式改为：null==null?"A":"B"或者在构造器中赋值
+控制台输出修改后的值 Hello

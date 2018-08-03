@@ -4,9 +4,22 @@ Android studio 如果有提交口令可能会导致无法同步，建议不要�
 2、打开C:\Users\liuxx\.ssh\id_rsa.pub，复制内容
 3、在gitlab网站中的Profile Settings中，将内容粘贴进去，添加对应key
 
+
 多用户设置
 1、创建GitHub的KEY：ssh-keygen -t rsa -C "1234@qq.com"
-创建时使用文件名"github_rsa"
+创建时使用文件名"id_dsa"(id_rsa被使用)或者自定义("github_rsa")
 2、eval $(ssh-agent -s)
-3、ssh-add ~/.ssh/github_rsa
+3、ssh-add ~/.ssh/id_dsa
 4、在github网站中添加KEY
+
+(~/.ssh/id_rsa, ~/.ssh/id_dsa and ~/.ssh/identity)为系统默认key文件，用户少于3个，都使用系统默认key文件名可以不添加配置文件
+如果使用自定义Key文件名，需要创建配置文件~/.ssh/ssh_config
+#gitlab
+Host gitlab
+HostName $(gitlab的域名或者IP地址)
+IdentityFile ~/.ssh/id_rsa
+	
+#github
+Host github
+HostName github.com
+IdentityFile ~/.ssh/github_rsa
